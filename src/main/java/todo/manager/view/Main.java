@@ -2,6 +2,7 @@ package todo.manager.view;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(123);
+        TaskManager taskManager = new TaskManager();
+        taskManager.checkOperation();
     }
 }
