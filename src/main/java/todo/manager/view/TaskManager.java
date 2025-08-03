@@ -1,5 +1,7 @@
 package todo.manager.view;
 
+import todo.manager.services.TaskService;
+
 import java.util.Scanner;
 
 public class TaskManager {
@@ -7,15 +9,16 @@ public class TaskManager {
      * @param hasChosen use for cycle while. Method will end while hasChosen = true
      * @author Daniel Mihai
      */
-    Scanner scanner = new Scanner(System.in);
-    private boolean hasChosen = false;
+    static Scanner scanner = new Scanner(System.in);
+    private static boolean hasChosen = false;
+    static TaskService taskService = new TaskService();
 
 
     /**
      * Method use data from user which he input from CLI
      * In fact of data method start operation
      */
-    public void checkOperation() {
+    public static void checkOperation() {
         while (!hasChosen) {
             System.out.println("Команда 'HELP' - выведет подсказки");
             System.out.print("Введите команду: ");
@@ -25,7 +28,7 @@ public class TaskManager {
 
             switch (optionToLowerCase) {
                 case "add":
-                    System.out.println("Выбрана команда: " + optionToLowerCase);
+                    taskService.addNewTask();
                     hasChosen = true;
                     break;
                 case "show":

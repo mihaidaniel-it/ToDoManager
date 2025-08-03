@@ -8,6 +8,5 @@ public record Task(
         String description,
         Priority priority,
         TaskStatus taskStatus,
-        LocalDateTime dateOfCreation,
-        LocalDateTime deadline) {
+        LocalDateTime dateOfCreation) {
 }
