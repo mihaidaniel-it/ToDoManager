@@ -1,4 +1,13 @@
 package todo.manager.services.model;
 
-public record Task() {
+import java.time.LocalDateTime;
+
+public record Task(
+        int id,
+        String header,
+        String description,
+        Priority priority,
+        TaskStatus taskStatus,
+        LocalDateTime dateOfCreation,
+        LocalDateTime deadline) {
 }
